@@ -101,7 +101,7 @@ namespace Api.TodoList.Data.Repository
             var elementDeleted = Entities.Remove(entity);
             await _dbContext.SaveChangesAsync().ConfigureAwait(false);
 
-            return elementDeleted.Entity;e
+            return elementDeleted.Entity;
         }
     }
 }
