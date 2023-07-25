@@ -15,4 +15,6 @@ public class Task
     public DateTime DateCreated { get; set; }
 
     public DateTime? DateDue { get; set; }
+
+    public virtual User User { get; set; } = null!;
 }

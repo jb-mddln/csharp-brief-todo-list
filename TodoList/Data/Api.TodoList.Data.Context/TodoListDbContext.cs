@@ -57,6 +57,10 @@ namespace Api.TodoList.Data.Context
                 entity.Property(e => e.DateDue).HasColumnType("datetime");
                 entity.Property(e => e.Description).HasColumnType("mediumtext");
                 entity.Property(e => e.Name).HasColumnType("mediumtext");
+
+                entity.HasOne(t => t.User).WithMany(u => u.Tasks)
+                    .HasForeignKey(t => t.IdUser)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<Status>(entity =>
